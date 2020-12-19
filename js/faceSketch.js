@@ -14,6 +14,7 @@ let HEIGHT;
  * This will create a canvas on the page attached to a specific
  * div container based on the div id attribute
  *  @namespace sketch
+ *  @param p {p5.js instance}
  */
 
 let sketch = function (p) {
