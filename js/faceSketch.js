@@ -10,6 +10,7 @@ let HEIGHT;
  * This contains the p5.js functions preload, setup, draw
  * This will create a canvas on the page attached to a specific
  * div container based on the div id attribute
+ * @param p p5.js instance
  */
 let sketch = function (p) {
 
@@ -65,7 +66,8 @@ let sketch = function (p) {
     /**
      * Helper method to create the HTML canvas and apply the buffer.
      * The canvas is resized so that the larger of width and heigh does not
-     * exceed the MAX_SIZE (see setDims)
+     * exceed the MAX_SIZE
+     * @see setDims
      */
     function createCnvs() {
         setDims();
