@@ -1,48 +1,48 @@
-function SantaHat(x1, y1, x2, y2){
+function SantaHat(p, x1, y1, x2, y2){
 
     let width = x2 - x1;
     let height = y2 - y1;
     let x_offset = 0;
     let y_offset = 0;
 
-    let img = loadImage('hat.png');
+    let img = p.loadImage('hat.png');
 
 
     this.draw = function () {
-        image(img, x1-x_offset, y1-y_offset);
+        p.image(img, x1-x_offset, y1-y_offset);
     }
 
     this.drawBox = function () {
-        noFill();
-        strokeWeight(10);
-        rect(x1, y1, width, height);
+        p.noFill();
+        p.strokeWeight(10);
+        p.rect(x1, y1, width, height);
     }
 
     this.resize = function () {
         img.resize(width*1.5, 0);
         x_offset = width*.1
-        y_offset = height*.25;
+        y_offset = height*.4;
     }
 }
 
-function ElfHat(x1, y1, x2, y2){
+function ElfHat(p, x1, y1, x2, y2){
 
     let width = x2 - x1;
     let height = y2 - y1;
     let x_offset = 0;
     let y_offset = 0;
 
-    let img = loadImage('elf.png');
+    let img = p.loadImage('elf.png');
 
 
     this.draw = function () {
-        image(img, x1-x_offset, y1-y_offset);
+        p.image(img, x1-x_offset, y1-y_offset);
     }
 
     this.drawBox = function () {
-        noFill();
-        strokeWeight(10);
-        rect(x1, y1, width, height);
+        p.noFill();
+        p.strokeWeight(10);
+        p.rect(x1, y1, width, height);
     }
 
     this.resize = function () {
@@ -52,23 +52,23 @@ function ElfHat(x1, y1, x2, y2){
     }
 }
 
-function SantaBeard(x1, y1, x2, y2){
+function SantaBeard(p, x1, y1, x2, y2){
 
     let width = x2 - x1;
     let height = y2 - y1;
     let x_offset = 0;
     let y_offset = 0;
 
-    let img = loadImage('beard.png');
+    let img = p.loadImage('beard.png');
 
 
     this.draw = function () {
-        image(img, x1-x_offset, y1-y_offset);
+        p.image(img, x1-x_offset, y1-y_offset);
     }
 
     this.drawBox = function () {
-        noFill();
-        strokeWeight(10);
+        p.noFill();
+        p.strokeWeight(10);
         rect(x1, y1, width, height);
     }
 
