@@ -1,4 +1,13 @@
-//necessary for opencvJS on static webpages. Creates the classifiers without needing a webserver
+/**
+*used to identify faces and provide the bounding boxes to sketch
+*@namespace faceDetection
+*/
+
+/**
+* necessary for opencvJS on static webpages. Creates the classifiers without needing a webserver
+* @memberof faceDetection
+* @member Module
+*/
 var Module = {
     wasmBinaryFile: 'https://huningxin.github.io/opencv.js/build/wasm/opencv_js.wasm',
     preRun: [function () {
@@ -7,8 +16,8 @@ var Module = {
         //Module.FS_createPreloadedFile('/', 'haarcascade_profileface.xml', 'https://raw.githubusercontent.com/opencv/opencv/master/data/haarcascades/haarcascade_profileface.xml', true, false);
     }],
 };
-let skch;
 
+let skch;
 
 //imageElement: uses a button to open file explorer to pick a picture
 let imgElement = document.getElementById('imageSrc');
@@ -17,7 +26,11 @@ inputElement.addEventListener('change', (e) => {
     imgElement.src = URL.createObjectURL(e.target.files[0]);
 }, false);
 
-//the main meat of the face detection
+/**
+*Collects the picture and uses classifiers to detect faces, putting the coordinates of the bounding box into an nx4 array
+*@memberof faceDetection
+*@function onLoad
+*/
 imgElement.onload = function () {
     let src = cv.imread(imgElement);
     let gray = new cv.Mat();
@@ -28,13 +41,12 @@ imgElement.onload = function () {
     faceCascade.load('haarcascade_frontalface_default.xml');
 
     faceCoordinates = [];
-// detect faces
+    
     let msize = new cv.Size(0, 0);
     try {
+        // detect faces
         faceCascade.detectMultiScale(gray, faces, 1.2, 3, 0, new cv.Size(gray.rows/30, gray.cols/30), msize);
-    } catch (err) {
-        console.log(err);
-    }
+    } catch (err) { console.log(err);}
 
     for (let i = 0; i < faces.size(); ++i) {
         faceCoordinates.push([faces.get(i).x, faces.get(i).y, faces.get(i).x + faces.get(i).width, faces.get(i).y + faces.get(i).height]);
@@ -49,6 +61,12 @@ imgElement.onload = function () {
 
 };
 
+/**
+* If a previous picture has been modified already, replace the current one with the new modified picture. 
+* Creates a new p5 instance
+* @function submitChoices
+* @memberof faceDetection
+*/
 function submitChoices() {
     if (skch != null) {
         skch.remove();

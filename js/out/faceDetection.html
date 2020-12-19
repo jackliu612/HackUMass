@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Global</title>
+    <title>JSDoc: Namespace: faceDetection</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Global</h1>
+    <h1 class="page-title">Namespace: faceDetection</h1>
 
     
 
@@ -28,7 +28,7 @@
 
 <header>
     
-        <h2></h2>
+        <h2>faceDetection</h2>
         
     
 </header>
@@ -36,6 +36,8 @@
 <article>
     <div class="container-overview">
     
+        
+            <div class="description">used to identify faces and provide the bounding boxes to sketch</div>
         
 
         
@@ -67,6 +69,11 @@
 
     
 
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="faceDetection.js.html">faceDetection.js</a>, <a href="faceDetection.js.html#line1">line 1</a>
+    </li></ul></dd>
     
 
     
@@ -98,13 +105,13 @@
 
         
             
-<h4 class="name" id="HEIGHT"><span class="type-signature"></span>HEIGHT<span class="type-signature"></span></h4>
+<h4 class="name" id=".preLoader"><span class="type-signature">(static) </span>preLoader<span class="type-signature"></span></h4>
 
 
 
 
 <div class="description">
-    Height of the canvas
+    necessary for opencvJS on static webpages. Creates the classifiers without needing a webserver
 </div>
 
 
@@ -142,7 +149,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="faceSketch.js.html">faceSketch.js</a>, <a href="faceSketch.js.html#line9">line 9</a>
+        <a href="faceDetection.js.html">faceDetection.js</a>, <a href="faceDetection.js.html#line6">line 6</a>
     </li></ul></dd>
     
 
@@ -157,17 +164,35 @@
 
 
 
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
 
         
             
-<h4 class="name" id="MAX_SIZE"><span class="type-signature"></span>MAX_SIZE<span class="type-signature"></span></h4>
 
+    
+
+    
+    <h4 class="name" id=".onLoad"><span class="type-signature">(static) </span>onLoad<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
 
 
 
 <div class="description">
-    Max dimension that the height or width of the output can be
+    Collects the picture and uses classifiers to detect faces, putting the coordinates of the bounding box into an nx4 array
 </div>
+
+
+
+
+
+
 
 
 
@@ -204,7 +229,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="faceSketch.js.html">faceSketch.js</a>, <a href="faceSketch.js.html#line5">line 5</a>
+        <a href="faceDetection.js.html">faceDetection.js</a>, <a href="faceDetection.js.html#line29">line 29</a>
     </li></ul></dd>
     
 
@@ -220,16 +245,6 @@
 
 
 
-        
-            
-<h4 class="name" id="WIDTH"><span class="type-signature"></span>WIDTH<span class="type-signature"></span></h4>
-
-
-
-
-<div class="description">
-    Width of the canvas
-</div>
 
 
 
@@ -237,45 +252,7 @@
 
 
 
-<dl class="details">
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="faceSketch.js.html">faceSketch.js</a>, <a href="faceSketch.js.html#line7">line 7</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
 
 
 
@@ -283,8 +260,6 @@
 
 
         
-    
-
     
 
     
