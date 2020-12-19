@@ -8,14 +8,14 @@ function SantaHat(p, x1, y1, x2, y2){
     let img = p.loadImage('hat.png');
 
 
-    this.draw = function () {
-        p.image(img, x1-x_offset, y1-y_offset);
+    this.draw = function (surf) {
+        surf.image(img, x1-x_offset, y1-y_offset);
     }
 
-    this.drawBox = function () {
-        p.noFill();
-        p.strokeWeight(10);
-        p.rect(x1, y1, width, height);
+    this.drawBox = function (surf) {
+        surf.noFill();
+        surf.strokeWeight(10);
+        surf.rect(x1, y1, width, height);
     }
 
     this.resize = function () {
@@ -35,14 +35,14 @@ function ElfHat(p, x1, y1, x2, y2){
     let img = p.loadImage('elf.png');
 
 
-    this.draw = function () {
-        p.image(img, x1-x_offset, y1-y_offset);
+    this.draw = function (surf) {
+        surf.image(img, x1-x_offset, y1-y_offset);
     }
 
-    this.drawBox = function () {
-        p.noFill();
-        p.strokeWeight(10);
-        p.rect(x1, y1, width, height);
+    this.drawBox = function (surf) {
+        surf.noFill();
+        surf.strokeWeight(10);
+        surf.rect(x1, y1, width, height);
     }
 
     this.resize = function () {
@@ -62,14 +62,14 @@ function SantaBeard(p, x1, y1, x2, y2){
     let img = p.loadImage('beard.png');
 
 
-    this.draw = function () {
-        p.image(img, x1-x_offset, y1-y_offset);
+    this.draw = function (surf) {
+        surf.image(img, x1-x_offset, y1-y_offset);
     }
 
-    this.drawBox = function () {
-        p.noFill();
-        p.strokeWeight(10);
-        rect(x1, y1, width, height);
+    this.drawBox = function (surf) {
+        surf.noFill();
+        surf.strokeWeight(10);
+        surf.rect(x1, y1, width, height);
     }
 
     this.resize = function () {

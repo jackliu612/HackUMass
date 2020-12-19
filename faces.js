@@ -1,40 +1,49 @@
+let MAX_SIZE = 500;
 let WIDTH;
 let HEIGHT;
-
-let POINT_1_X = 320;
-let POINT_1_Y = 130;
-
-let POINT_2_X = 550;
-let POINT_2_Y = 440;
-
-let temp;
-let temp2;
-
 
 let sketch = function (p) {
 
     let hats = [];
+    let img;
+    let buff;
 
-    p.preload = function() {
-        jack = p.loadImage(imgElement.src);
-        WIDTH = imgElement.width;
-        HEIGHT = imgElement.height;
-        // temp = new SantaHat(p, POINT_1_X, POINT_1_Y, POINT_2_X, POINT_2_Y);
-        // temp2 = new SantaBeard(p, POINT_1_X, POINT_1_Y, POINT_2_X, POINT_2_Y);
+    p.preload = function () {
+        img = p.loadImage(imgElement.src);
         createHats(faceCoordinates);
     }
 
-    p.setup = function() {
-        p.createCanvas(WIDTH, HEIGHT);
-        p.image(jack, 0, 0);
+    p.setup = function () {
         resizeHats();
-        // temp.resize();
-        // temp2.resize();
+        createBuffer();
+        createCnvs();
+    }
+
+    p.draw = function () {
 
     }
 
-    p.draw = function() {
-        drawHats();
+    function createBuffer() {
+        buff = p.createGraphics(imgElement.width, imgElement.height);
+        buff.image(img, 0, 0);
+        drawHats(buff);
+    }
+
+    function createCnvs() {
+        setDims();
+        p.createCanvas(WIDTH, HEIGHT);
+        p.image(buff, 0, 0, WIDTH, HEIGHT);
+    }
+
+    function setDims() {
+        if (imgElement.width > imgElement.height) {
+            // fix width to 1000 and height to maintain aspect ratio
+            WIDTH = MAX_SIZE;
+            HEIGHT = WIDTH*imgElement.height/imgElement.width;
+        } else {
+            HEIGHT = MAX_SIZE;
+            WIDTH = HEIGHT*imgElement.width/imgElement.height;
+        }
     }
 
     function createHats(faces) {
@@ -51,9 +60,13 @@ let sketch = function (p) {
         })
     }
 
-    function drawHats() {
+    function drawHats(surf) {
         hats.forEach(hat => {
-            hat.draw();
+            hat.draw(surf);
         })
+    }
+
+    function newImage() {
+
     }
 }

@@ -28,6 +28,7 @@
             //Module.FS_createPreloadedFile('/', 'haarcascade_profileface.xml', 'https://raw.githubusercontent.com/opencv/opencv/master/data/haarcascades/haarcascade_profileface.xml', true, false);
         }],
     };
+    var test;
 </script>
 <script type="text/javascript">
 
@@ -68,7 +69,10 @@
         faceCascade.delete();
         faces.delete();
         console.log(faceCoordinates);
-        new p5(sketch, 'output');
+        if (test != null) {
+            test.remove();
+        }
+        test = new p5(sketch, 'output');
     };
 </script>
 <script async src="https://docs.opencv.org/3.4.0/opencv.js" type="text/javascript"></script>
