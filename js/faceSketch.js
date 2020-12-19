@@ -38,9 +38,23 @@ let sketch = function (p) {
 
     p.preload = function () {
         img = p.loadImage(imgElement.src);
-        let selection = document.getElementById('hats');
-
-        //createHats(faceCoordinates);
+        let selection = document.getElementById('hats').value;
+        switch (selection){
+            case "santaHat":
+                console.log("santa hat");
+                createHats(faceCoordinates, SantaHat);
+                break;
+            case "elfHat":
+                console.log("elf hat");
+                createHats(faceCoordinates, ElfHat);
+                break;
+            case "santaBeard":
+                console.log("santa beard");
+                createHats(faceCoordinates, SantaBeard);
+                break;
+            default:
+                console.log(selection);
+        }
     }
 
     /**
@@ -51,7 +65,7 @@ let sketch = function (p) {
      * @memberof sketch
      */
     p.setup = function () {
-        //resizeHats();
+        resizeHats();
         createBuffer();
         createCnvs();
     }
@@ -75,7 +89,7 @@ let sketch = function (p) {
     function createBuffer() {
         buff = p.createGraphics(imgElement.width, imgElement.height);
         buff.image(img, 0, 0);
-        //drawHats(buff);
+        drawHats(buff);
     }
 
     /**

@@ -85,7 +85,7 @@ function ElfHat(p, x1, y1, x2, y2) {
     this.resize = function () {
         img.resize(width * 1.5, 0);
         x_offset = width * .15
-        y_offset = height * .9;
+        y_offset = height * 1.4;
     }
 }
 
