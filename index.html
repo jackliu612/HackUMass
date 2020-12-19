@@ -12,6 +12,16 @@
     <div class="inputoutput">
         <img id="imageSrc" alt="No Image"/>
         <div class="caption">imageSrc <input type="file" id="fileInput" name="file"/></div>
+
+        <label for="hats">Choose your cosmetics:</label>
+
+        <select name="hats" id="hats">
+            <option value="santaHat">Santa Hat</option>
+            <option value="elfHat">Elf Hat</option>
+            <option value="santaBeard">Santa Beard</option>
+        </select>
+
+        <button onclick="submitChoices()">Click me</button>
     </div>
     <div id="output" class="inputoutput">
         <canvas id="canvasOutput"></canvas>

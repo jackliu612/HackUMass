@@ -7,7 +7,7 @@ var Module = {
         //Module.FS_createPreloadedFile('/', 'haarcascade_profileface.xml', 'https://raw.githubusercontent.com/opencv/opencv/master/data/haarcascades/haarcascade_profileface.xml', true, false);
     }],
 };
-var test;
+let skch;
 
 
 //imageElement: uses a button to open file explorer to pick a picture
@@ -46,8 +46,12 @@ imgElement.onload = function () {
     faceCascade.delete();
     faces.delete();
     console.log(faceCoordinates);
-    if (test != null) {
-        test.remove();
-    }
-    test = new p5(sketch, 'output');
+
 };
+
+function submitChoices() {
+    if (skch != null) {
+        skch.remove();
+    }
+    skch = new p5(sketch, 'output');
+}

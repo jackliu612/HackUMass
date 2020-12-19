@@ -31,7 +31,9 @@ let sketch = function (p) {
 
     p.preload = function () {
         img = p.loadImage(imgElement.src);
-        createHats(faceCoordinates);
+        let selection = document.getElementById('hats');
+
+        //createHats(faceCoordinates);
     }
 
     /**
@@ -40,7 +42,7 @@ let sketch = function (p) {
      * Draw everything to the buffer, and finally draw the buffer to the canvas
      */
     p.setup = function () {
-        resizeHats();
+        //resizeHats();
         createBuffer();
         createCnvs();
     }
@@ -60,7 +62,7 @@ let sketch = function (p) {
     function createBuffer() {
         buff = p.createGraphics(imgElement.width, imgElement.height);
         buff.image(img, 0, 0);
-        drawHats(buff);
+        //drawHats(buff);
     }
 
     /**
@@ -94,11 +96,12 @@ let sketch = function (p) {
     /**
      * Creates a hat object instance for each of the detected faces.
      * @param faces nx4 array that contains the bounding box for each of the n faces detected
+     * @param cls The hat class type (I.e. SantaHat or ElfHat)
      */
-    function createHats(faces) {
+    function createHats(faces, cls) {
         faces.forEach(face => {
-            hats.push(new SantaHat(p, face[0], face[1], face[2], face[3]));
-            hats.push(new SantaBeard(p, face[0], face[1], face[2], face[3]));
+            hats.push(new cls(p, face[0], face[1], face[2], face[3]));
+            hats.push(new cls(p, face[0], face[1], face[2], face[3]));
         })
 
     }
