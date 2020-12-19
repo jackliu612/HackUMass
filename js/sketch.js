@@ -13,7 +13,7 @@ let temp2;
 
 
 function preload() {
-    jack = loadImage('me.jpg');
+    //jack = loadImage('me.jpg');
     temp = new SantaHat(POINT_1_X, POINT_1_Y, POINT_2_X, POINT_2_Y);
     temp2 = new SantaBeard(POINT_1_X, POINT_1_Y, POINT_2_X, POINT_2_Y);
 }

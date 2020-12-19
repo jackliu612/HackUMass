@@ -5,7 +5,7 @@ function SantaHat(p, x1, y1, x2, y2){
     let x_offset = 0;
     let y_offset = 0;
 
-    let img = p.loadImage('hat.png');
+    let img = p.loadImage('img/hat.png');
 
 
     this.draw = function (surf) {
@@ -32,7 +32,7 @@ function ElfHat(p, x1, y1, x2, y2){
     let x_offset = 0;
     let y_offset = 0;
 
-    let img = p.loadImage('elf.png');
+    let img = p.loadImage('img/elf.png');
 
 
     this.draw = function (surf) {
@@ -59,7 +59,7 @@ function SantaBeard(p, x1, y1, x2, y2){
     let x_offset = 0;
     let y_offset = 0;
 
-    let img = p.loadImage('beard.png');
+    let img = p.loadImage('img/beard.png');
 
 
     this.draw = function (surf) {
