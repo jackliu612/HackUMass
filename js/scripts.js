@@ -5,6 +5,18 @@
  */
 
 /**
+ * Displays the welcome modal when the page is loaded
+ * @function pageLoad
+ * @memberOf scripts
+ */
+function pageLoad() {
+    if (!localStorage.getItem("modalShown")) {
+        $('#exampleModal').modal('show');
+        localStorage.setItem("modalShown", 'yes');
+    }
+}
+
+/**
  * This is the onclick function to the submit button after the user chooses their accessories.
  * If a previous picture has been modified already, replace the current one with the new modified picture.
  * Creates a new p5 instance in either case.
