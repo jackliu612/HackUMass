@@ -24,11 +24,7 @@
     <script src="js/faceSketch.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<div id = "cover" class = "bg-dark">
-    <div class="jumbotron text-center">
-    <h1>Christmas Converter</h1>
-    <p>Add some Christmas Cheer Back To Your Life!</p>
-</div>
+<div id = "cover">
 <body>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -56,9 +52,12 @@
     </div>
 </div>
 <!-- End Modal -->
-<script>showModal();</script>
+<script>pageLoad();</script>
 
-
+<div class="jumbotron text-center">
+    <h1>Christmas Converter</h1>
+    <p>Add some Christmas Cheer Back To Your Life!</p>
+</div>
 
 <div>
     <div class="inputoutput">
@@ -79,14 +78,14 @@
         <div class="caption"></div>
     </div>
     <a id="download" download="holidayCheer.png">
-    <button type="button" name = "download" onClick="download()" style = "position:relative; left:25px; top: 10px;">Download</button>
+    <button type="button" name = "download" onClick="download()" style = "position:relative; left:25px; top: 10px; bottom: 10px;">Download</button>
 </a>
 </div>
 
 
 
 <script src="js/faceDetection.js"></script>
-<script src="https://docs.opencv.org/3.4.0/opencv.js" type="text/javascript" onload="pageLoad()"></script>
+<script async src="https://docs.opencv.org/3.4.0/opencv.js" type="text/javascript"></script>
 </body>
 </div>
 </html>
