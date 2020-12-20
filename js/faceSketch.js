@@ -1,9 +1,11 @@
 // Some global variables
-/** Max dimension that the height or width of the output can be */
-let MAX_SIZE;
-/** Width of the canvas*/
+/** {int} Max dimension that the width of the output can be */
+let MAX_WIDTH;
+/** {int} Max dimension that the height of the output can be */
+let MAX_HEIGHT;
+/** {int} Width of the canvas*/
 let WIDTH;
-/** Height of the canvas*/
+/** {int} Height of the canvas*/
 let HEIGHT;
 
 /**
@@ -16,7 +18,8 @@ let HEIGHT;
  */
 
 let sketch = function (p) {
-    MAX_SIZE = p.windowHeight*.6;
+    MAX_WIDTH = p.windowWidth * .65;
+    MAX_HEIGHT = p.windowHeight * .7;
     // Holds all of the hats for each deteched face
     let hats = [];
     // This is the base image
@@ -39,6 +42,8 @@ let sketch = function (p) {
         let santaHat = document.getElementById('santaHat').checked;
         let elfHat = document.getElementById('elfHat').checked;
         let santaBeard = document.getElementById('santaBeard').checked;
+        let topHat = document.getElementById('topHat').checked;
+        let mask = document.getElementById('mask').checked;
         if (santaHat) {
             console.log("santa hat");
             createHats(faceCoordinates, SantaHat);
@@ -50,6 +55,14 @@ let sketch = function (p) {
         if (santaBeard) {
             console.log("santa beard");
             createHats(faceCoordinates, SantaBeard);
+        }
+        if (topHat) {
+            console.log("top hat");
+            createHats(faceCoordinates, TopHat);
+        }
+        if (mask) {
+            console.log("face mask");
+            createHats(faceCoordinates, Mask);
         }
     }
 
@@ -111,12 +124,12 @@ let sketch = function (p) {
      * @memberof sketch
      */
     function setDims() {
-        if (imgElement.width > imgElement.height) {
+        if (imgElement.width / MAX_WIDTH > imgElement.height / MAX_HEIGHT) {
             // fix width to 1000 and height to maintain aspect ratio
-            WIDTH = MAX_SIZE;
+            WIDTH = MAX_WIDTH;
             HEIGHT = WIDTH * imgElement.height / imgElement.width;
         } else {
-            HEIGHT = MAX_SIZE;
+            HEIGHT = MAX_HEIGHT;
             WIDTH = HEIGHT * imgElement.width / imgElement.height;
         }
     }

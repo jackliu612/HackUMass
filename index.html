@@ -18,7 +18,10 @@
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
 
+    <!-- p5.js -->
     <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
+
+    <!-- Custom js files-->
     <script src="js/hat.js"></script>
     <script src="js/scripts.js"></script>
     <script src="js/faceSketch.js"></script>
@@ -28,12 +31,14 @@
 
 </head>
 <body>
+<!-- Cover used to contain snow sketch-->
 <div id="cover">
     <div class="jumbotron text-center">
         <h1>Christmas Converter</h1>
         <p>Add some Christmas Cheer Back To Your Life!</p>
     </div>
 
+    <!-- Contains entire input menu -->
     <div class="float-container">
         <div id="input" class="inputoutput float-child">
             <img id="imageSrc" alt="No Image" style="display: none;"/>
@@ -42,27 +47,32 @@
                 <label class="custom-file-label" for="fileInput">Pick an image!</label>
             </div>
 
+            <!-- Cosmetic options -->
             <div class="checks">
                 <input type="checkbox" id="santaHat" name="1" value="santaHat">
-                <label for="santaHat"> Santa Hat</label><br>
+                <label for="santaHat">Santa Hat</label><br>
                 <input type="checkbox" id="elfHat" name="2" value="elfHat">
-                <label for="elfHat"> Elf Hat</label><br>
+                <label for="elfHat">Elf Hat</label><br>
                 <input type="checkbox" id="santaBeard" name="3" value="santaBeard">
-                <label for="santaBeard"> Santa Beard</label><br>
+                <label for="santaBeard">Santa Beard</label><br>
+                <input type="checkbox" id="topHat" name="4" value="topHat">
+                <label for="topHat">Top Hat</label><br>
+                <input type="checkbox" id="mask" name="5" value="mask">
+                <label for="mask">Face Mask</label><br>
             </div>
-
+            <!-- Submission -->
             <button onclick="submitChoices()" class="btn btn-success">Click me</button>
             <a id="download" download="holidayCheer.png">
                 <button type="button" name="download" onClick="download()" class="btn btn-danger">Download
                 </button>
             </a>
         </div>
-        <div id="output" class="inputoutput float-child" style = "text-align:center;">
-            <div class="caption"></div>
+        <!-- Output image canvas -->
+        <div id="output" class="inputoutput float-child" style="text-align:center;">
         </div>
     </div>
 
-
+    <!-- Face detection script + OpenCV-->
     <script src="js/faceDetection.js"></script>
     <script src="https://docs.opencv.org/3.4.0/opencv.js" type="text/javascript" onload="pageLoad()"></script>
 </div>
@@ -94,7 +104,7 @@
         </div>
     </div>
 </div>
-<!-- End Modal -->
 <script>showModal();</script>
+<!-- End Modal -->
 </body>
 </html>

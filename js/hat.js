@@ -159,3 +159,103 @@ function SantaBeard(p, x1, y1, x2, y2) {
         y_offset = -height * .65;
     }
 }
+
+/**
+ * Represents a Top Hat image that can be drawn to a surface
+ * @see SantaHat
+ * @param p p5.js instance
+ * @param x1 {int} x-coordinate of the bounding box's top left corner
+ * @param y1 {int} y-coordinate of the bounding box's top left corner
+ * @param x2 {int} x-coordinate of the bounding box's bottom right corner
+ * @param y2 {int} y-coordinate of the bounding box's bottom right corner
+ * @constructor
+ * @memberof hat
+ */
+function TopHat(p, x1, y1, x2, y2) {
+
+    let width = x2 - x1;
+    let height = y2 - y1;
+    let x_offset = 0;
+    let y_offset = 0;
+
+    let img = p.loadImage('img/tophat.png');
+
+    /**
+     * Method to draw the hat on a given surface
+     * @param surf {p5.Graphics} Surface to draw on. Must be a p5.Graphics object.
+     */
+    this.draw = function (surf) {
+        surf.image(img, x1 - x_offset, y1 - y_offset);
+    }
+
+    /**
+     * Method to draw the bounding box for debugging purposes
+     * @param surf {p5.Graphics} Surface to draw on. Must be a p5.Graphics object.
+     */
+    this.drawBox = function (surf) {
+        surf.noFill();
+        surf.strokeWeight(10);
+        surf.rect(x1, y1, width, height);
+    }
+
+    /**
+     * Resizing function that is run after the image is loaded to
+     * fit the bounding box appropriately
+     * Also sets the offsets for x and y so it is positioned correctly
+     */
+    this.resize = function () {
+        img.resize(width * 1.5, 0);
+        x_offset = width * .15
+        y_offset = height * 1.1;
+    }
+}
+
+/**
+ * Represents a Face Mask image that can be drawn to a surface
+ * @see SantaHat
+ * @param p p5.js instance
+ * @param x1 {int} x-coordinate of the bounding box's top left corner
+ * @param y1 {int} y-coordinate of the bounding box's top left corner
+ * @param x2 {int} x-coordinate of the bounding box's bottom right corner
+ * @param y2 {int} y-coordinate of the bounding box's bottom right corner
+ * @constructor
+ * @memberof hat
+ */
+function Mask(p, x1, y1, x2, y2) {
+
+    let width = x2 - x1;
+    let height = y2 - y1;
+    let x_offset = 0;
+    let y_offset = 0;
+
+    let img = p.loadImage('img/mask.png');
+
+    /**
+     * Method to draw the hat on a given surface
+     * @param surf {p5.Graphics} Surface to draw on. Must be a p5.Graphics object.
+     */
+    this.draw = function (surf) {
+        surf.image(img, x1 - x_offset, y1 - y_offset);
+    }
+
+    /**
+     * Method to draw the bounding box for debugging purposes
+     * @param surf {p5.Graphics} Surface to draw on. Must be a p5.Graphics object.
+     */
+    this.drawBox = function (surf) {
+        surf.noFill();
+        surf.strokeWeight(10);
+        surf.rect(x1, y1, width, height);
+    }
+
+    /**
+     * Resizing function that is run after the image is loaded to
+     * fit the bounding box appropriately
+     * Also sets the offsets for x and y so it is positioned correctly
+     */
+    this.resize = function () {
+        img.resize(width*.8, 0);
+        x_offset = -width*.1
+        y_offset = - height * .45;
+    }
+}

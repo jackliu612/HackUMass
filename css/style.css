@@ -1,13 +1,13 @@
 .jumbotron {
     background-color: #34aa44;
     color: #fff;
-    /*position:relative;*/
-    height:124px;
+    height: 124px;
     font-family: Montserrat, sans-serif;
 }
 
 .jumbotron h1 {
-    margin-top:-50px;
+    /* Moving text up within jumbotron */
+    margin-top: -50px;
 }
 
 div {
@@ -22,10 +22,9 @@ div {
     right: 0;
     left: 0;
     position: fixed;
-    /*overflow-y: scroll;*/
-    /*overflow-x: hidden;*/
 }
 
+/* Making sure snow canvas is underneath all other elements */
 canvas:first-of-type {
     margin: auto;
     position: absolute;
@@ -41,6 +40,7 @@ canvas:first-of-type {
     display: none;
 }
 
+/* Styling for input container */
 .float-container {
     padding: 20px;
 }
@@ -58,11 +58,12 @@ label, input {
     color: white;
 }
 
-#output{
+#output {
     width: 60%;
     float: left;
 }
 
+/* Vertical padding for form checkboxes */
 .checks {
     padding-top: 30px;
     padding-bottom: 30px;
