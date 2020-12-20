@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Hello OpenCV.js</title>
+    <title>Christmas Converter</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -22,18 +22,18 @@
     <script src="js/hat.js"></script>
     <script src="js/scripts.js"></script>
     <script src="js/faceSketch.js"></script>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="jumbotron text-center">
-    <h1>Christmas Convert</h1>
+<div class="jumbotron text-center jumbotron-fluid">
+    <h1>Christmas Converter</h1>
     <p>Add some Christmas Cheer Back To Your Life!</p>
 </div>
 
 <div>
     <div class="inputoutput">
         <img id="imageSrc" alt="No Image" style="display: none;"/>
-        <div class="caption">Pick an image! <input type="file" id="fileInput" name="file"/></div>
+        <div class="caption"style = "position:relative; right:20px; ">Pick an image! <input type="file" id="fileInput" name="file"/></div>
 
         <input type="checkbox" id="santaHat" name="1" value="santaHat">
         <label for="santaHat"> Santa Hat</label><br>
@@ -46,13 +46,14 @@
     </div>
     <div id="output" class="inputoutput">
         <canvas id="canvasOutput"></canvas>
-        <div class="caption">canvasOutput</div>
+        <div class="caption"></div>
     </div>
+    <a id="download" download="holidayCheer.png">
+    <button type="button" name = "download" onClick="download()" style = "position:relative; left:25px; ">Download</button>
+</a>
 </div>
 
-<a id="download" download="holidayCheer.png">
-    <button type="button" onClick="download()">Download</button>
-</a>
+
 
 <script src="js/faceDetection.js"></script>
 <script async src="https://docs.opencv.org/3.4.0/opencv.js" type="text/javascript"></script>
