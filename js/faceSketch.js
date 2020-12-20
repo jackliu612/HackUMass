@@ -1,5 +1,3 @@
-
-
 // Some global variables
 /** Max dimension that the height or width of the output can be */
 let MAX_SIZE = 500;
@@ -38,22 +36,20 @@ let sketch = function (p) {
 
     p.preload = function () {
         img = p.loadImage(imgElement.src);
-        let selection = document.getElementById('hats').value;
-        switch (selection){
-            case "santaHat":
-                console.log("santa hat");
-                createHats(faceCoordinates, SantaHat);
-                break;
-            case "elfHat":
-                console.log("elf hat");
-                createHats(faceCoordinates, ElfHat);
-                break;
-            case "santaBeard":
-                console.log("santa beard");
-                createHats(faceCoordinates, SantaBeard);
-                break;
-            default:
-                console.log(selection);
+        let santaHat = document.getElementById('santaHat').checked;
+        let elfHat = document.getElementById('elfHat').checked;
+        let santaBeard = document.getElementById('santaBeard').checked;
+        if (santaHat) {
+            console.log("santa hat");
+            createHats(faceCoordinates, SantaHat);
+        }
+        if (elfHat) {
+            console.log("elf hat");
+            createHats(faceCoordinates, ElfHat);
+        }
+        if (santaBeard) {
+            console.log("santa beard");
+            createHats(faceCoordinates, SantaBeard);
         }
     }
 
@@ -116,10 +112,10 @@ let sketch = function (p) {
         if (imgElement.width > imgElement.height) {
             // fix width to 1000 and height to maintain aspect ratio
             WIDTH = MAX_SIZE;
-            HEIGHT = WIDTH*imgElement.height/imgElement.width;
+            HEIGHT = WIDTH * imgElement.height / imgElement.width;
         } else {
             HEIGHT = MAX_SIZE;
-            WIDTH = HEIGHT*imgElement.width/imgElement.height;
+            WIDTH = HEIGHT * imgElement.width / imgElement.height;
         }
     }
 
