@@ -1,0 +1,10 @@
+ .jumbotron {
+      background-color: #34aa44;
+      color: #fff;
+      padding: 100px 25px;
+      font-family: Montserrat, sans-serif;
+  }
+
+  div {
+  padding-left: 20px;
+}
