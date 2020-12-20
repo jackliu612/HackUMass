@@ -45,7 +45,7 @@ imgElement.onload = function () {
     let msize = new cv.Size(0, 0);
     try {
         // detect faces
-        faceCascade.detectMultiScale(gray, faces, 1.2, 3, 0, new cv.Size(gray.rows/30, gray.cols/30), msize);
+        faceCascade.detectMultiScale(gray, faces, 1.25, 3, 0, new cv.Size(gray.rows/30, gray.cols/30), msize);
     } catch (err) { console.log(err);}
 
     for (let i = 0; i < faces.size(); ++i) {
