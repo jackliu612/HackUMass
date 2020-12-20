@@ -167,7 +167,7 @@ The buffer is the exact size of the input image
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="faceSketch.js.html">faceSketch.js</a>, <a href="faceSketch.js.html#line83">line 83</a>
+        <a href="faceSketch.js.html">faceSketch.js</a>, <a href="faceSketch.js.html#line92">line 92</a>
     </li></ul></dd>
     
 
@@ -257,12 +257,19 @@ exceed the MAX_SIZE (see setDims)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="faceSketch.js.html">faceSketch.js</a>, <a href="faceSketch.js.html#line95">line 95</a>
+        <a href="faceSketch.js.html">faceSketch.js</a>, <a href="faceSketch.js.html#line104">line 104</a>
     </li></ul></dd>
     
 
     
 
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li>setDims</li>
+        </ul>
+    </dd>
     
 
     
@@ -293,7 +300,7 @@ exceed the MAX_SIZE (see setDims)
     
 
     
-    <h4 class="name" id=".createHats"><span class="type-signature">(static) </span>createHats<span class="signature">(faces)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id=".createHats"><span class="type-signature">(static) </span>createHats<span class="signature">(faces, cls)</span><span class="type-signature"></span></h4>
     
 
     
@@ -343,7 +350,7 @@ exceed the MAX_SIZE (see setDims)
             <td class="type">
             
                 
-<span class="param-type">array</span>
+<span class="param-type">Array.&lt;Array.&lt;int>></span>
 
 
             
@@ -354,6 +361,35 @@ exceed the MAX_SIZE (see setDims)
             
 
             <td class="description last">nx4 array that contains the bounding box for each of the n faces detected</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cls</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">SantaHat</span>
+|
+
+<span class="param-type">ElfHat</span>
+|
+
+<span class="param-type">SantaBeard</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The accessory class that is being added</td>
         </tr>
 
     
@@ -394,7 +430,7 @@ exceed the MAX_SIZE (see setDims)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="faceSketch.js.html">faceSketch.js</a>, <a href="faceSketch.js.html#line126">line 126</a>
+        <a href="faceSketch.js.html">faceSketch.js</a>, <a href="faceSketch.js.html#line137">line 137</a>
     </li></ul></dd>
     
 
@@ -483,7 +519,7 @@ Currently unused
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="faceSketch.js.html">faceSketch.js</a>, <a href="faceSketch.js.html#line73">line 73</a>
+        <a href="faceSketch.js.html">faceSketch.js</a>, <a href="faceSketch.js.html#line82">line 82</a>
     </li></ul></dd>
     
 
@@ -519,7 +555,7 @@ Currently unused
     
 
     
-    <h4 class="name" id=".drawHats"><span class="type-signature">(static) </span>drawHats<span class="signature">(Surface)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id=".drawHats"><span class="type-signature">(static) </span>drawHats<span class="signature">(surf)</span><span class="type-signature"></span></h4>
     
 
     
@@ -563,13 +599,13 @@ Currently unused
 
         <tr>
             
-                <td class="name"><code>Surface</code></td>
+                <td class="name"><code>surf</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">surf</span>
+<span class="param-type">p5.Graphics</span>
 
 
             
@@ -579,7 +615,7 @@ Currently unused
 
             
 
-            <td class="description last">onto which the hats are drawn on (typically a offscreen buffer)</td>
+            <td class="description last">Surface onto which the hats are drawn on (typically a offscreen buffer)</td>
         </tr>
 
     
@@ -620,7 +656,7 @@ Currently unused
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="faceSketch.js.html">faceSketch.js</a>, <a href="faceSketch.js.html#line152">line 152</a>
+        <a href="faceSketch.js.html">faceSketch.js</a>, <a href="faceSketch.js.html#line164">line 164</a>
     </li></ul></dd>
     
 
@@ -711,7 +747,7 @@ available to use later on and avoiding any async issues
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="faceSketch.js.html">faceSketch.js</a>, <a href="faceSketch.js.html#line30">line 30</a>
+        <a href="faceSketch.js.html">faceSketch.js</a>, <a href="faceSketch.js.html#line31">line 31</a>
     </li></ul></dd>
     
 
@@ -800,7 +836,7 @@ the size and position of each face
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="faceSketch.js.html">faceSketch.js</a>, <a href="faceSketch.js.html#line140">line 140</a>
+        <a href="faceSketch.js.html">faceSketch.js</a>, <a href="faceSketch.js.html#line152">line 152</a>
     </li></ul></dd>
     
 
@@ -890,7 +926,7 @@ the other to maintain correct aspect ratio
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="faceSketch.js.html">faceSketch.js</a>, <a href="faceSketch.js.html#line108">line 108</a>
+        <a href="faceSketch.js.html">faceSketch.js</a>, <a href="faceSketch.js.html#line119">line 119</a>
     </li></ul></dd>
     
 
@@ -980,7 +1016,7 @@ Draw everything to the buffer, and finally draw the buffer to the canvas
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="faceSketch.js.html">faceSketch.js</a>, <a href="faceSketch.js.html#line60">line 60</a>
+        <a href="faceSketch.js.html">faceSketch.js</a>, <a href="faceSketch.js.html#line69">line 69</a>
     </li></ul></dd>
     
 
@@ -1026,13 +1062,13 @@ Draw everything to the buffer, and finally draw the buffer to the canvas
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="faceDetection.html">faceDetection</a></li><li><a href="hat.html">hat</a></li><li><a href="sketch.html">sketch</a></li></ul><h3>Classes</h3><ul><li><a href="hat.ElfHat.html">ElfHat</a></li><li><a href="hat.SantaBeard.html">SantaBeard</a></li><li><a href="hat.SantaHat.html">SantaHat</a></li></ul><h3>Global</h3><ul><li><a href="global.html#HEIGHT">HEIGHT</a></li><li><a href="global.html#MAX_SIZE">MAX_SIZE</a></li><li><a href="global.html#WIDTH">WIDTH</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="faceDetection.html">faceDetection</a></li><li><a href="hat.html">hat</a></li><li><a href="scripts.html">scripts</a></li><li><a href="sketch.html">sketch</a></li></ul><h3>Classes</h3><ul><li><a href="hat.ElfHat.html">ElfHat</a></li><li><a href="hat.Mask.html">Mask</a></li><li><a href="hat.SantaBeard.html">SantaBeard</a></li><li><a href="hat.SantaHat.html">SantaHat</a></li><li><a href="hat.TopHat.html">TopHat</a></li></ul><h3>Global</h3><ul><li><a href="global.html#faceCoordinates">faceCoordinates</a></li><li><a href="global.html#HEIGHT">HEIGHT</a></li><li><a href="global.html#MAX_HEIGHT">MAX_HEIGHT</a></li><li><a href="global.html#MAX_WIDTH">MAX_WIDTH</a></li><li><a href="global.html#skch">skch</a></li><li><a href="global.html#WIDTH">WIDTH</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Sat Dec 19 2020 15:59:28 GMT-0500 (Eastern Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Sun Dec 20 2020 00:41:33 GMT-0500 (Eastern Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

@@ -26,14 +26,14 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>
-
-// Some global variables
-/** Max dimension that the height or width of the output can be */
-let MAX_SIZE = 500;
-/** Width of the canvas*/
+            <pre class="prettyprint source linenums"><code>// Some global variables
+/** {int} Max dimension that the width of the output can be */
+let MAX_WIDTH;
+/** {int} Max dimension that the height of the output can be */
+let MAX_HEIGHT;
+/** {int} Width of the canvas*/
 let WIDTH;
-/** Height of the canvas*/
+/** {int} Height of the canvas*/
 let HEIGHT;
 
 /**
@@ -42,11 +42,12 @@ let HEIGHT;
  * This will create a canvas on the page attached to a specific
  * div container based on the div id attribute
  *  @namespace sketch
- *  @param p {p5.js}
+ *  @param p {p5} p5.js instance
  */
 
 let sketch = function (p) {
-
+    MAX_WIDTH = p.windowWidth * .65;
+    MAX_HEIGHT = p.windowHeight * .7;
     // Holds all of the hats for each deteched face
     let hats = [];
     // This is the base image
@@ -66,22 +67,30 @@ let sketch = function (p) {
 
     p.preload = function () {
         img = p.loadImage(imgElement.src);
-        let selection = document.getElementById('hats').value;
-        switch (selection){
-            case "santaHat":
-                console.log("santa hat");
-                createHats(faceCoordinates, SantaHat);
-                break;
-            case "elfHat":
-                console.log("elf hat");
-                createHats(faceCoordinates, ElfHat);
-                break;
-            case "santaBeard":
-                console.log("santa beard");
-                createHats(faceCoordinates, SantaBeard);
-                break;
-            default:
-                console.log(selection);
+        let santaHat = document.getElementById('santaHat').checked;
+        let elfHat = document.getElementById('elfHat').checked;
+        let santaBeard = document.getElementById('santaBeard').checked;
+        let topHat = document.getElementById('topHat').checked;
+        let mask = document.getElementById('mask').checked;
+        if (santaHat) {
+            console.log("santa hat");
+            createHats(faceCoordinates, SantaHat);
+        }
+        if (elfHat) {
+            console.log("elf hat");
+            createHats(faceCoordinates, ElfHat);
+        }
+        if (santaBeard) {
+            console.log("santa beard");
+            createHats(faceCoordinates, SantaBeard);
+        }
+        if (topHat) {
+            console.log("top hat");
+            createHats(faceCoordinates, TopHat);
+        }
+        if (mask) {
+            console.log("face mask");
+            createHats(faceCoordinates, Mask);
         }
     }
 
@@ -124,12 +133,14 @@ let sketch = function (p) {
      * Helper method to create the HTML canvas and apply the buffer.
      * The canvas is resized so that the larger of width and heigh does not
      * exceed the MAX_SIZE (see setDims)
+     * @see setDims
      * @function createCnvs
      * @memberof sketch
      */
     function createCnvs() {
         setDims();
-        p.createCanvas(WIDTH, HEIGHT);
+        let cnv = p.createCanvas(WIDTH, HEIGHT);
+        cnv.id('holiday');
         p.image(buff, 0, 0, WIDTH, HEIGHT);
     }
 
@@ -141,19 +152,20 @@ let sketch = function (p) {
      * @memberof sketch
      */
     function setDims() {
-        if (imgElement.width > imgElement.height) {
+        if (imgElement.width / MAX_WIDTH > imgElement.height / MAX_HEIGHT) {
             // fix width to 1000 and height to maintain aspect ratio
-            WIDTH = MAX_SIZE;
-            HEIGHT = WIDTH*imgElement.height/imgElement.width;
+            WIDTH = MAX_WIDTH;
+            HEIGHT = WIDTH * imgElement.height / imgElement.width;
         } else {
-            HEIGHT = MAX_SIZE;
-            WIDTH = HEIGHT*imgElement.width/imgElement.height;
+            HEIGHT = MAX_HEIGHT;
+            WIDTH = HEIGHT * imgElement.width / imgElement.height;
         }
     }
 
     /**
      * Creates a hat object instance for each of the detected faces.
-     * @param {array} faces nx4 array that contains the bounding box for each of the n faces detected
+     * @param {Array.&lt;Array.&lt;int>>} faces nx4 array that contains the bounding box for each of the n faces detected
+     * @param cls {SantaHat|ElfHat|SantaBeard} The accessory class that is being added
      * @function createHats
      * @memberof sketch
      */
@@ -179,7 +191,7 @@ let sketch = function (p) {
 
     /**
      * Draws each of the hats onto the given surface
-     * @param {surf} Surface onto which the hats are drawn on (typically a offscreen buffer)
+     * @param {p5.Graphics} surf Surface onto which the hats are drawn on (typically a offscreen buffer)
      * @function drawHats
      * @memberof sketch
      */
@@ -199,13 +211,13 @@ let sketch = function (p) {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="faceDetection.html">faceDetection</a></li><li><a href="hat.html">hat</a></li><li><a href="sketch.html">sketch</a></li></ul><h3>Classes</h3><ul><li><a href="hat.ElfHat.html">ElfHat</a></li><li><a href="hat.SantaBeard.html">SantaBeard</a></li><li><a href="hat.SantaHat.html">SantaHat</a></li></ul><h3>Global</h3><ul><li><a href="global.html#HEIGHT">HEIGHT</a></li><li><a href="global.html#MAX_SIZE">MAX_SIZE</a></li><li><a href="global.html#WIDTH">WIDTH</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="faceDetection.html">faceDetection</a></li><li><a href="hat.html">hat</a></li><li><a href="scripts.html">scripts</a></li><li><a href="sketch.html">sketch</a></li></ul><h3>Classes</h3><ul><li><a href="hat.ElfHat.html">ElfHat</a></li><li><a href="hat.Mask.html">Mask</a></li><li><a href="hat.SantaBeard.html">SantaBeard</a></li><li><a href="hat.SantaHat.html">SantaHat</a></li><li><a href="hat.TopHat.html">TopHat</a></li></ul><h3>Global</h3><ul><li><a href="global.html#faceCoordinates">faceCoordinates</a></li><li><a href="global.html#HEIGHT">HEIGHT</a></li><li><a href="global.html#MAX_HEIGHT">MAX_HEIGHT</a></li><li><a href="global.html#MAX_WIDTH">MAX_WIDTH</a></li><li><a href="global.html#skch">skch</a></li><li><a href="global.html#WIDTH">WIDTH</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Sat Dec 19 2020 15:59:28 GMT-0500 (Eastern Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Sun Dec 20 2020 00:41:33 GMT-0500 (Eastern Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
