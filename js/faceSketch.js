@@ -98,7 +98,8 @@ let sketch = function (p) {
      */
     function createCnvs() {
         setDims();
-        p.createCanvas(WIDTH, HEIGHT);
+        let cnv = p.createCanvas(WIDTH, HEIGHT);
+        cnv.id('holiday');
         p.image(buff, 0, 0, WIDTH, HEIGHT);
     }
 
