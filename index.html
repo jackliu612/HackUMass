@@ -34,30 +34,32 @@
         <p>Add some Christmas Cheer Back To Your Life!</p>
     </div>
 
-    <div>
-        <div class="inputoutput">
+    <div class="float-container">
+        <div id="input" class="inputoutput float-child">
             <img id="imageSrc" alt="No Image" style="display: none;"/>
-            <div class="caption" style="position:relative; right:20px; ">Pick an image! <input type="file"
-                                                                                               id="fileInput"
-                                                                                               name="file"/></div>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="fileInput" name="file">
+                <label class="custom-file-label" for="fileInput">Pick an image!</label>
+            </div>
 
-            <input type="checkbox" id="santaHat" name="1" value="santaHat">
-            <label for="santaHat"> Santa Hat</label><br>
-            <input type="checkbox" id="elfHat" name="2" value="elfHat">
-            <label for="elfHat"> Elf Hat</label><br>
-            <input type="checkbox" id="santaBeard" name="3" value="santaBeard">
-            <label for="santaBeard"> Santa Beard</label><br>
+            <div class="checks">
+                <input type="checkbox" id="santaHat" name="1" value="santaHat">
+                <label for="santaHat"> Santa Hat</label><br>
+                <input type="checkbox" id="elfHat" name="2" value="elfHat">
+                <label for="elfHat"> Elf Hat</label><br>
+                <input type="checkbox" id="santaBeard" name="3" value="santaBeard">
+                <label for="santaBeard"> Santa Beard</label><br>
+            </div>
 
-            <button onclick="submitChoices()">Click me</button>
+            <button onclick="submitChoices()" class="btn btn-success">Click me</button>
+            <a id="download" download="holidayCheer.png">
+                <button type="button" name="download" onClick="download()" class="btn btn-danger">Download
+                </button>
+            </a>
         </div>
-        <div id="output" class="inputoutput">
+        <div id="output" class="inputoutput float-child">
             <div class="caption"></div>
         </div>
-        <a id="download" download="holidayCheer.png">
-            <button type="button" name="download" onClick="download()"
-                    style="position:relative; left:25px; top: 10px; bottom: 10px;">Download
-            </button>
-        </a>
     </div>
 
 
