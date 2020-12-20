@@ -1,12 +1,12 @@
 /**
-* used to draw the hats and beards onto faces, given the bounding box and a p5.graphics object
+* Used to draw the hats and beards onto faces, given the bounding box and a p5.graphics object
 * @namespace hat
 */
 
 
 /**
  * Represents a Santa Hat image that can be drawn to a surface
- * @param p {p5.js} p5.js instance
+ * @param p {p5} p5.js instance
  * @param x1 {int} x-coordinate of the bounding box's top left corner
  * @param y1 {int} y-coordinate of the bounding box's top left corner
  * @param x2 {int} x-coordinate of the bounding box's bottom right corner

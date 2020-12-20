@@ -12,7 +12,7 @@ let HEIGHT;
  * This will create a canvas on the page attached to a specific
  * div container based on the div id attribute
  *  @namespace sketch
- *  @param p {p5.js}
+ *  @param p {p5} p5.js instance
  */
 
 let sketch = function (p) {
@@ -92,6 +92,7 @@ let sketch = function (p) {
      * Helper method to create the HTML canvas and apply the buffer.
      * The canvas is resized so that the larger of width and heigh does not
      * exceed the MAX_SIZE (see setDims)
+     * @see setDims
      * @function createCnvs
      * @memberof sketch
      */
@@ -121,7 +122,8 @@ let sketch = function (p) {
 
     /**
      * Creates a hat object instance for each of the detected faces.
-     * @param {array} faces nx4 array that contains the bounding box for each of the n faces detected
+     * @param {Array.<Array.<int>>} faces nx4 array that contains the bounding box for each of the n faces detected
+     * @param cls {SantaHat|ElfHat|SantaBeard} The accessory class that is being added
      * @function createHats
      * @memberof sketch
      */
@@ -147,7 +149,7 @@ let sketch = function (p) {
 
     /**
      * Draws each of the hats onto the given surface
-     * @param {surf} Surface onto which the hats are drawn on (typically a offscreen buffer)
+     * @param {p5.Graphics} surf Surface onto which the hats are drawn on (typically a offscreen buffer)
      * @function drawHats
      * @memberof sketch
      */
