@@ -1,11 +1,23 @@
 // Some global variables
-/** @type {int} Max dimension that the width of the output can be */
+/** 
+* Max dimension that the width of the output can be
+* @type {int} 
+*/
 let MAX_WIDTH;
-/** @type {int} Max dimension that the height of the output can be */
+
+/** 
+* Max dimension that the height of the output can be
+* @type {int} 
+*/
 let MAX_HEIGHT;
-/** @type {int} Width of the canvas*/
+/** 
+*Width of the canvas
+*@type {int} */
 let WIDTH;
-/** @type {int} Height of the canvas*/
+/** 
+* Height of the canvas
+* @type {int} 
+*/
 let HEIGHT;
 
 /**

@@ -27,7 +27,9 @@ inputElement.addEventListener('change', (e) => {
     faceCoordinates = [];
 }, false);
 
-/** {Array.<Array.<int>>} Used to hold the bounding boxes for each detected face */
+/** 
+* Used to hold the bounding boxes for each detected face
+* @type {Array.<Array.<int>>}  */
 let faceCoordinates = [];
 /**
  * Collects the picture and uses classifiers to detect faces, putting the coordinates of the bounding box into an nx4 array
