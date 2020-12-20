@@ -27,15 +27,13 @@ inputElement.addEventListener('change', (e) => {
     imgElement.src = URL.createObjectURL(e.target.files[0]);
 }, false);
 
+let faceCoordinates = [];
 /**
  * Collects the picture and uses classifiers to detect faces, putting the coordinates of the bounding box into an nx4 array
  * @memberof faceDetection
  * @function onLoad
  */
 imgElement.onload = function () {
-    // Used to hold the bounding boxes for each detected face
-    faceCoordinates = [];
-
     // Displays the uploaded image on the canvas initially
     submitChoices();
 
@@ -53,7 +51,8 @@ imgElement.onload = function () {
         faceCascade.detectMultiScale(gray, faces, 1.25, 3, 0, new cv.Size(gray.rows/30, gray.cols/30), msize);
     } catch (err) { console.log(err);}
 
-
+    // Used to hold the bounding boxes for each detected face
+    faceCoordinates = [];
     for (let i = 0; i < faces.size(); ++i) {
         faceCoordinates.push([faces.get(i).x, faces.get(i).y, faces.get(i).x + faces.get(i).width, faces.get(i).y + faces.get(i).height]);
     }
