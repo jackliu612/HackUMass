@@ -1,13 +1,15 @@
 .jumbotron {
     background-color: #34aa44;
     color: #fff;
-    padding: 100px 25px;
+    position:relative;
+    height:140px;
     font-family: Montserrat, sans-serif;
 }
 
 div {
     padding-left: 20px;
 }
+
 
 #cover {
     background-color: #343a40;
