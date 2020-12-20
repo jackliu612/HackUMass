@@ -1,9 +1,13 @@
 .jumbotron {
     background-color: #34aa44;
     color: #fff;
-    position:relative;
-    height:140px;
+    /*position:relative;*/
+    height:124px;
     font-family: Montserrat, sans-serif;
+}
+
+.jumbotron h1 {
+    margin-top:-50px;
 }
 
 div {
@@ -18,13 +22,9 @@ div {
     right: 0;
     left: 0;
     position: fixed;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    /*overflow-y: scroll;*/
+    /*overflow-x: hidden;*/
 }
-
-/*button.download {*/
-/*    padding-left: 150px;*/
-/*}*/
 
 canvas:first-of-type {
     margin: auto;

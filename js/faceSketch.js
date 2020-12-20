@@ -1,6 +1,6 @@
 // Some global variables
 /** Max dimension that the height or width of the output can be */
-let MAX_SIZE = 500;
+let MAX_SIZE;
 /** Width of the canvas*/
 let WIDTH;
 /** Height of the canvas*/
@@ -16,7 +16,7 @@ let HEIGHT;
  */
 
 let sketch = function (p) {
-
+    MAX_SIZE = p.windowHeight*.6;
     // Holds all of the hats for each deteched face
     let hats = [];
     // This is the base image

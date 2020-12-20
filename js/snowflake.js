@@ -76,6 +76,6 @@ class Snowflake {
 
   getRandomSize() {
     let r = this.p.pow(this.p.random(0, 1), 3);
-    return this.p.constrain(r * 32, 2, 32);
+    return this.p.constrain(r * 32, 5, 32);
   }
 }
