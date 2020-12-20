@@ -33,3 +33,8 @@ canvas:first-of-type {
     height: 100%;
     z-index: -1;
 }
+
+.modal-backdrop {
+    /* bug fix - no overlay */
+    display: none;
+}
